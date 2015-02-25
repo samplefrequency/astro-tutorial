@@ -1,3 +1,7 @@
+body {
+    background-color: #bccfba;
+}
+
 .cart-item {
     display: block;
     background-color: #fff;
@@ -8,8 +12,6 @@
     margin-bottom: 20px;
 
     border-radius: 12px;
-
-    box-shadow: 2px 1px 1px 0px rgba(0,0,0,0.75);
 }
 
 .cart-item .image, .cart-item .item-name {

@@ -1,9 +1,10 @@
 body {
-    background-color: #ddd;
+    background-color: #d8c2ca;
     font-family: Arial;
 }
 
 .row {
+    margin: 0 auto;
     margin-bottom: 20px;
 }
 
@@ -11,10 +12,10 @@ body {
     background-color: #fff;
     display: inline-block;
 
-    width: 35%;
+    width: 38%;
 
-    margin: 0 2%;
-    padding: 15px;
+    margin: 2%;
+    padding: 3%;
     border-radius: 12px;
 
     text-align: center;
