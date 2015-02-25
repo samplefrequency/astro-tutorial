@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="row">
+            <div class="item" data-item="pink shoes">
+                <img src="http://4.bp.blogspot.com/-0ohSWFfXc6g/UZKx2W7htLI/AAAAAAAAABI/6ff5M0Tm1ug/s400/you-you-shoes1.jpg"/>
+                <div class="item-name">Pink</div>
+                <div class="button add-to-cart">Add to Cart!</div>
+            </div>
+            <div class="item" data-item="spotted shoes">
+                <img src="http://www.rockfrocks.com/images/50s-style-rockabilly-shoes/secret-satin-pinup-high-heel-girl-clothing-50s-shoes-for-wedding.jpg"/>
+                <div class="item-name">Spotted</div>
+                <div class="button add-to-cart">Add to Cart!</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="item" data-item="crystal shoes">
+                <img src="http://www.crystalbridalaccessories.co.uk/prods/SalvadorPINK.jpg"/>
+                <div class="item-name">Crystal</div>
+                <div class="button add-to-cart">Add to Cart!</div>
+            </div>
+            <div class="item" data-item="snake shoes">
+                <img src="http://img.weburbanist.com/wp-content/uploads/2013/01/Architect-Shoes-Julian-Hakes.jpg"/>
+                <div class="item-name">Snake</div>
+                <div class="button add-to-cart">Add to Cart!</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="item" data-item="checkered shoes">
+                <img src="http://styleideas.biz/wp-content/uploads/2014/07/shoes___rockfrocks.com__1950s_style_and_rockabilly_clothing_store_v.jpg"/>
+                <div class="item-name">Checkered</div>
+                <div class="button add-to-cart">Add to Cart!</div>
+            </div>
+            <div class="item" data-item="snake shoes">
+                <img src="http://pakifashion.net/wp-content/uploads/Luxury-Girls-Shoes-Collection-for-Christmas-2013-8.jpg"/>
+                <div class="item-name">Snake</div>
+                <div class="button add-to-cart">Add to Cart!</div>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/backbone-events.js"></script>
+        <script src="js/astro.js"></script>
+        <script>
+            $(".add-to-cart").click(function() {
+                Astro.trigger('addToCartClicked');
+
+                var item = $(this).closest('.item')[0];
+                var image = $(item).find('img')[0];
+
+                var cart = JSON.parse(localStorage.getItem("cart")) || [];
+                cart.push({item: item.dataset.item, image: image.src});
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+            });
+        </script>
+    </body>
+</html>

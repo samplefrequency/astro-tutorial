@@ -1,0 +1,36 @@
+.cart-item {
+    display: block;
+    background-color: #fff;
+    width: 90%;
+
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 2px 1px 1px 0px rgba(0,0,0,0.75);
+}
+
+.cart-item .image, .cart-item .item-name {
+    display: inline-block;
+    margin: auto 0;
+}
+
+.cart-item .item-name {
+    position: relative;
+    width: 65%;
+    bottom: 30px;
+
+    text-transform: capitalize;
+}
+
+.cart-item .image {
+    position: relative;
+    right: 0;
+    width: 25%;
+}
+
+.cart-item img {
+    width: 100%;
+}
