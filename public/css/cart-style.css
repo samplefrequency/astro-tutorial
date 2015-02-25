@@ -2,6 +2,10 @@ body {
     background-color: #bccfba;
 }
 
+.cart-items {
+    margin-top: 15px;
+}
+
 .cart-item {
     display: block;
     background-color: #fff;
