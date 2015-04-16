@@ -46,7 +46,14 @@
         <script src="js/cart.js"></script>
 
         <!-- Add your scripts here -->
+        <script src="js/backbone-events.js"></script>
+        <script src="js/astro.js"></script>
 
+        <script>
+            $(".add-to-cart").click(function() {
+                Astro.trigger('addToCartClicked');
+            });
+        </script>
         <!-- Add your scripts here -->
     </body>
 </html>
