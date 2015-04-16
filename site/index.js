@@ -1,11 +1,18 @@
 var express = require('express');
 var app = express();
 
+
+app.engine('html', require('ejs').renderFile);
+
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
-    response.send('Hello World!');
+    response.render('index.html');
+});
+
+app.get('/cart/', function(request, response) {
+    response.render('cart.html');
 });
 
 app.listen(app.get('port'), function() {
