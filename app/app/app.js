@@ -46,8 +46,8 @@ function(
 
     // When the header bar is ready, load its icons.
     headerPromise.then(function(headerBar){
-        headerBar.setRightIcon(baseUrl + "images/bag.png");
-        headerBar.setCenterIcon(baseUrl + "images/logo.png");
+        headerBar.setRightIcon(baseUrl + "/images/bag.png");
+        headerBar.setCenterIcon(baseUrl + "/images/logo.png");
         headerBar.setBackgroundColor("#FFFFFF");
     });
 
