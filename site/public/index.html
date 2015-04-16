@@ -43,24 +43,10 @@
         </div>
 
         <script src="js/jquery.min.js"></script>
+        <script src="js/cart.js"></script>
 
         <!-- Add your scripts here -->
-        <script src="js/backbone-events.js"></script>
-        <script src="js/astro.js"></script>
+
         <!-- Add your scripts here -->
-
-        <script>
-            $(".add-to-cart").click(function() {
-                Astro.trigger('addToCartClicked');
-
-                var item = $(this).closest('.item')[0];
-                var image = $(item).find('img')[0];
-
-                var cart = JSON.parse(localStorage.getItem("cart")) || [];
-                cart.push({item: item.dataset.item, image: image.src});
-
-                localStorage.setItem("cart", JSON.stringify(cart));
-            });
-        </script>
     </body>
 </html>
