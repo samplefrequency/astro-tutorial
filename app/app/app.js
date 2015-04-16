@@ -16,7 +16,7 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = 'http://10.10.1.63:5000/';
+    var baseUrl = '';
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
