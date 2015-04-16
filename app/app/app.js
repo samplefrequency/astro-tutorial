@@ -82,4 +82,10 @@ function(
         });
     });
 
+    Promise.join(mainWebViewPromise, rightDrawerPromise, function(mainWebView, rightDrawer) {
+        mainWebView.on('addToCartClicked', function() {
+            rightDrawer.open();
+        });
+    });
+
 }, undefined, true);
