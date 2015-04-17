@@ -25,6 +25,7 @@ android {
 }
 
 task buildJS(type:Exec) {
+    environment 'PATH', System.getenv('PATH') + ':/usr/local/bin'
     commandLine "./build-js.sh"
 }
 
