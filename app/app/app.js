@@ -44,15 +44,17 @@ function(
         application.setMainInputPlugin(mainWebView.address);
     });
 
-    // When the header bar is ready, load its icons.
-    headerPromise.then(function(headerBar){
-        headerBar.setRightIcon(baseUrl + "/images/bag.png");
-        headerBar.setCenterIcon(baseUrl + "/images/logo.png");
-        headerBar.setBackgroundColor("#FFFFFF");
+    // Create a new promise for when icons have been loaded into the header bar
+    var loadIconPromise = headerPromise.then(function(headerBar){
+        return Promise.join(
+            headerBar.setRightIcon(baseUrl + "/images/bag.png"),
+            headerBar.setCenterIcon(baseUrl + "/images/logo.png"),
+            headerBar.setBackgroundColor("#FFFFFF")
+        );
     });
 
     // Add the header bar to the top of the layout
-    Promise.join(layoutPromise, headerPromise, function(layout, headerBar) {
+    Promise.join(layoutPromise, headerPromise, loadIconPromise, function(layout, headerBar) {
         layout.addTopView(headerBar.address);
         headerBar.show();
     });
