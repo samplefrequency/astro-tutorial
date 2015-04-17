@@ -67,7 +67,7 @@ function(
     });
 
     cartWebViewPromise.then(function(webView) {
-        webView.navigate(baseUrl + "/cart.html")
+        webView.navigate(baseUrl + "cart/")
     });
 
     // Add the cart web view to the right drawer
