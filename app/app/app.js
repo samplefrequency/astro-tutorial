@@ -6,15 +6,15 @@ require([
     'plugins/anchoredLayoutPlugin'
 ],
 function(
-     Astro,
-     Promise,
-     ApplicationPlugin,
-     WebViewPlugin,
-     AnchoredLayoutPlugin
+    Astro,
+    Promise,
+    ApplicationPlugin,
+    WebViewPlugin,
+    AnchoredLayoutPlugin
 ) {
 
     // Enter your site url here
-    var baseUrl = '';
+    var baseUrl = 'http://www.google.com/';
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
