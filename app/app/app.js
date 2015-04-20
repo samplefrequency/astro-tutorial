@@ -14,7 +14,7 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = 'http://www.google.com/';
+    var baseUrl = 'http://<your local IP address>:5000/';
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
