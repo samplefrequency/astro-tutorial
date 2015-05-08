@@ -1,28 +1,73 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="stylesheet" href="/css/cart-style.css" />
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/templates/cart.css">
     </head>
-    <body>
-        <div class="cart-items">
-        </div>
+    <body class="t-cart">
+        <h1 class="c-heading c--h3 c--header">My Cart</h1>
+        <section class="c-product-list">
+        </section>
+
         <script src="/js/jquery.min.js"></script>
         <script src="/js/backbone-events.js"></script>
         <script src="/js/astro.js"></script>
         <script>
+            $('body').on('click', '.js-toggle-actions', function() {
+                // Hide all other actions first
+                $('.js-product').removeClass('c--actions-visible');
+                $(this).closest('.js-product').addClass('c--actions-visible');
+                return false;
+            });
+
+            $('body').on('click', '.js-product-wrapper', function() {
+                $(this).closest('.js-product').removeClass('c--actions-visible');
+            });
+
+            $('body').on('click', '.js-remove', function() {
+                var $product = $(this).closest('.js-product');
+                $product.addClass('c--removed');
+                setTimeout(function() {
+                    $product.remove();
+                }, 1000);
+
+                return false;
+            });
+
+            $('body').on('click', function() {
+                var $visibleActions = $('.js-product.c--actions-visible');
+                $visibleActions.removeClass('c--actions-visible');
+                if ($visibleActions.length > 0) {
+                    return false;
+                }
+            });
+
             var updateCartItems = function() {
                 var cart = JSON.parse(localStorage.getItem("cart")) || [];
 
                 var item;
-                var $cartItems = $('.cart-items');
+                var $cartItems = $('.c-product-list');
                 $cartItems.empty();
                 for (var i = 0, length = cart.length; i < cart.length; i++) {
                     item = cart[i];
 
-                    $cartItems.append('<div class="cart-item">' +
-                        '<div class="item-name">' + item.item + '</div>' +
-                        '<div class="image"><img src="' + item.image + '" /></div>' +
-                        '</div>');
+                    $cartItems.append(
+                        '<article class="c-product js-product">' +
+                            '<div class="c-product__wrapper js-product-wrapper">' +
+                                '<a href="/pdp/" class="c-product__link">' +
+                                    '<div class="c-product__details">' +
+                                        '<h1 class="c-heading c--h4 c-product__title">' + item.item + '</h1>' +
+                                        '<p class="c-product__price">' + item.price + '</p>' +
+                                    '</div>' +
+                                    '<img src="' + item.image + '" alt="' + item.item + '" class="c-product__image">' +
+                                '</a>' +
+                                '<button class="c-button c--more js-toggle-actions"><span class="u-hidden">More</span></button>' +
+                            '</div>' +
+                            '<div class="c-product__actions">' +
+                                '<buton class="c-button c--action c--remove js-remove">Remove</button>' +
+                            '</div>' +
+                        '</article>'
+                    );
                 }
             };
 

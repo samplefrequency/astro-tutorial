@@ -1,49 +1,341 @@
+/**
+* Vélo - Astro Tutorial App
+*
+* Created by Mobify.
+* Last edit May 7 2015 by Ross Howard-Jones.
+*/
+
+/* Reset */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,
+abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,
+strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+html {
+    font-size: 8px;
+}
+
+html,
 body {
-    background-color: #d8c2ca;
-    font-family: Arial;
+    height: 100%;
+    min-height: 100%;
 }
 
-.row {
-    margin: 0 auto;
-    margin-bottom: 20px;
+body {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    color: #595959;
+    font: 2rem/1.5 helvetica, serif;
+    font-style: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-text-size-adjust: none;
 }
 
-.item {
-    background-color: #fff;
-    display: inline-block;
+/**
+* General
+*/
 
-    width: 38%;
+a,
+* a {
+    color: #1ccdab;
+    text-decoration: none;
+}
 
-    margin: 2%;
-    padding: 3%;
-    border-radius: 12px;
+img {
+    display: block;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1;
+}
+
+h1,
+.c--h1 {
+    font-size: 3.5rem;
+}
+
+h2,
+.c--h2 {
+    font-size: 3rem;
+}
+
+h3,
+.c--h3 {
+    font-size: 2.5rem;
+}
+
+h4,
+.c--h4 {
+    font-size: 2.25rem;
+}
+
+h5,
+h6,
+.c--h5,
+.c--h6 {
+    font-size: 2rem;
+}
+
+.c--header {
+    line-height: 6rem;
+    padding: 0 2rem 0;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    background: #f2f2f2;
+}
+
+/**
+* Universal
+*/
+
+.u-hidden {
+    width: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+}
+
+/**
+* Components
+*/
+
+/* Button */
+
+.c-button {
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+.c-button.c--more {
+    width: 6rem;
+    height: 6rem;
+    background: transparent url('/images/more.svg') no-repeat;
+    background-size: 100%;
+}
+
+.c-button.c--cta {
+    background: #1ccdab;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.c-button.c--sm {
+    padding: 1rem 2rem;
+    -webkit-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.c-button.c--lg {
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+}
+
+.c-button.c--action {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.c-button.c--remove {
+    background: red;
+}
+
+.c-button:hover {
+    cursor: pointer;
+}
+
+/* Product List */
+
+.c-product-list {
+}
+
+/* Product */
+
+.c-product {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    max-height: 100rem;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.c-product.c--removed {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.c-product__wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    width: 100%;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    background: #fff;
+    z-index: 1;
+    -moz-transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.c--actions-visible .c-product__wrapper {
+    position: relative;
+    -moz-transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+    transform: translateX(-25%);
+}
+
+.c-product__wrapper::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0);
+    z-index: -1;
+    -moz-transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.c--actions-visible .c-product__wrapper::after {
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+}
+
+.c-product__link {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    flex: 0 0 50%;
+}
+
+.c-product__image {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    width: 100%;
+    height: auto;
+}
+
+.c-product__details {
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
     text-align: center;
 }
 
-.item-name {
+.c-product__title {
+    margin: 0 2rem 0.5rem 2rem;
+}
+
+.c-product__price {
+    margin-bottom: 0.5rem;
+}
+
+.c-product__meta {
+    background: #f2f2f2;
+    padding: 2rem;
+}
+
+.c-product__meta *:last-child {
+    margin-bottom: 0;
+}
+
+/* Nav Account */
+
+.c-nav-account__link {
     display: block;
-    margin: 10px auto;
-}
-
-.button {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 18;
-  -moz-border-radius: 18;
-  border-radius: 18px;
-  color: #ffffff;
-  font-size: 14px;
-  padding: 10px 10px 10px 10px;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-}
-
-.item img {
-    width: 100%;
+    padding: 0 2rem;
+    line-height: 6rem;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
 }

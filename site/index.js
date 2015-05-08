@@ -11,8 +11,16 @@ app.get('/', function(request, response) {
     response.render('index.html');
 });
 
+app.get('/pdp/', function(request, response) {
+    response.render('pdp.html');
+});
+
 app.get('/cart/', function(request, response) {
     response.render('cart.html');
+});
+
+app.get('/account/', function(request, response) {
+    response.render('account.html');
 });
 
 app.listen(app.get('port'), function() {

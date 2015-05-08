@@ -18,7 +18,7 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = "http://<your local IP address>:5000/";
+    var baseUrl = "http://10.10.1.190:5000/";
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
@@ -27,11 +27,16 @@ function(
     var headerPromise = HeaderBarPlugin.init();
     var drawerPromise = DrawerPlugin.init();
     var cartWebViewPromise = WebViewPlugin.init();
+    var accountWebViewPromise = WebViewPlugin.init();
 
 
     // Start the app at the base url
     mainWebViewPromise.then(function(mainWebView) {
         mainWebView.navigate(baseUrl);
+    });
+
+    accountWebViewPromise.then(function(accountWebView) {
+        accountWebView.navigate(baseUrl + 'account');
     });
 
     // Use the mainWebView as the main content view for our layout
@@ -47,8 +52,9 @@ function(
     // Create a new promise for when icons have been loaded into the header bar
     var loadIconPromise = headerPromise.then(function(headerBar){
         return Promise.join(
-            headerBar.setRightIcon(baseUrl + "/images/bag.png"),
-            headerBar.setCenterIcon(baseUrl + "/images/logo.png"),
+            headerBar.setLeftIcon(baseUrl + "/images/account.png"),
+            headerBar.setRightIcon(baseUrl + "/images/cart.png"),
+            headerBar.setCenterIcon(baseUrl + "/images/velo.png"),
             headerBar.setBackgroundColor("#FFFFFF")
         );
     });
@@ -78,9 +84,21 @@ function(
         return rightDrawer;
     });
 
+    // Add the account web view to the left drawer
+    var leftDrawerPromise = Promise.join(accountWebViewPromise, drawerPromise, function(accountWebView, drawer) {
+        var leftDrawer = drawer.initLeftMenu(accountWebView.address);
+        return leftDrawer;
+    });
+
     Promise.join(rightDrawerPromise, headerPromise, function(rightDrawer, header) {
         header.on('rightIconClick', function() {
             rightDrawer.toggle();
+        });
+    });
+
+    Promise.join(leftDrawerPromise, headerPromise, function(leftDrawer, header) {
+        header.on('leftIconClick', function() {
+            leftDrawer.toggle();
         });
     });
 
