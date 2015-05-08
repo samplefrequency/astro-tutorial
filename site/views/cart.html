@@ -27,8 +27,14 @@
             $('body').on('click', '.js-remove', function() {
                 var $product = $(this).closest('.js-product');
                 $product.addClass('c--removed');
+
+                var $products = $('.js-product');
+                var index = $products.index($product);
+                debugger;
+
                 setTimeout(function() {
                     $product.remove();
+                    removeCartItem(index);
                 }, 1000);
 
                 return false;
@@ -72,6 +78,17 @@
             };
 
             window.addEventListener('storage', updateCartItems);
+
+            var removeCartItem = function(index) {
+                var cart = JSON.parse(localStorage.getItem("cart") || []);
+
+                if (index === 0) {
+                    cart = cart.slice(1);
+                } else {
+                    cart = cart.slice(0, index).concat(cart.slice(index + 1));
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
 
             updateCartItems();
 
