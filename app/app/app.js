@@ -18,7 +18,9 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = "http://10.10.1.190:5000/";
+    var baseUrl = 'http://10.10.1.63:5000/';
+    var cartPath = '/cart';
+    var accountPath = '/menu';
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
@@ -75,7 +77,41 @@ function(
     });
 
     cartWebViewPromise.then(function(webView) {
-        webView.navigate(baseUrl + "cart/")
+        webView.navigate(baseUrl + "cart/");
+    });
+
+    Promise.join(cartWebViewPromise, mainWebViewPromise, drawerPromise,
+        function(cartWebView, mainWebView, drawer) {
+            cartWebView.disableDefaultNavigationHandler()
+            cartWebView.on('navigate', function(params) {
+                var url = params.url;
+                var parsedUrl = document.createElement('a');
+                parsedUrl.href = url;
+
+                if (parsedUrl.pathname === cartPath) {
+                    cartWebView.navigate(url);
+                    return;
+                }
+                mainWebView.navigate(url);
+                drawer.hideRightMenu();
+            });
+    });
+
+    Promise.join(accountWebViewPromise, mainWebViewPromise, drawerPromise,
+        function(accountWebView, mainWebView, drawer) {
+            accountWebView.disableDefaultNavigationHandler()
+            accountWebView.on('navigate', function(params) {
+                var url = params.url;
+                var parsedUrl = document.createElement('a');
+                parsedUrl.href = url;
+
+                if (parsedUrl.pathname === accountPath) {
+                    accountWebView.navigate(url);
+                    return;
+                }
+                mainWebView.navigate(url);
+                drawer.hideLeftMenu();
+            });
     });
 
     // Add the cart web view to the right drawer
