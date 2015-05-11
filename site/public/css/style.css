@@ -96,6 +96,7 @@ h6,
 
 .c--header {
     line-height: 6rem;
+    margin: 0;
     padding: 0 2rem 0;
     -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
     -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
@@ -118,7 +119,7 @@ textarea {
     border: none;
     -webkit-border-radius: 0.5rem;
     border-radius: 0.5rem;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.1);
     font-size: 2rem;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
