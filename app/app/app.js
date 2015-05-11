@@ -36,7 +36,7 @@ function(
     });
 
     accountWebViewPromise.then(function(accountWebView) {
-        accountWebView.navigate(baseUrl + 'account');
+        accountWebView.navigate(baseUrl + 'menu');
     });
 
     // Use the mainWebView as the main content view for our layout

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/templates/pdp.css">
+    </head>
+    <body class="t-pdp">
+        <section class="c-product js-product" data-item="Road Bike" data-price="1699.99">
+            <div class="c-product__wrapper">
+                <div class="c-product__details">
+                    <h1 class="c-heading c--h1 c-product__title">Road Bike</h1>
+                    <p class="c-product__price">$1699.99</p>
+                </div>
+                <img src="/images/road.jpg" alt="Road Bike" class="c-product__image js-product-image">
+                <button class="c-button c--cta c--lg js-add">Add to Cart!</button>
+                <aside class="c-product__meta">
+                    <p>Our Road Bike takes the best of attributes of a road bike and fuses them with the flat bar position of a mountain bike, to deliver a ride that performs on the asphalt. You might think that the lightweight aluminum frame or the 21-speed smooth shifting Microshift shifters with Shimano derailleurs are the best features on the Vector. But it's the brakes - there are dual disc brakes on this flat bar road bike, which will get you slowed or stopped, rain or shine. Add Kraton comfort grips and you have a comfortable ride with the efficiency of a road bike, all wrapped into one.</p>
+                </aside>
+            </div>
+        </section>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/cart.js"></script>
+
+        <!-- Add your scripts here -->
+        <script src="/js/backbone-events.js"></script>
+        <script src="/js/astro.js"></script>
+        <!-- Add your scripts here -->
+
+        <script>
+            $(".js-add").click(function() {
+                Astro.trigger('addToCartClicked');
+            });
+        </script>
+    </body>
+</html>

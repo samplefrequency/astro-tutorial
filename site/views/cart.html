@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/templates/cart.css">
     </head>
@@ -30,12 +32,11 @@
 
                 var $products = $('.js-product');
                 var index = $products.index($product);
-                debugger;
 
                 setTimeout(function() {
                     $product.remove();
                     removeCartItem(index);
-                }, 1000);
+                }, 500);
 
                 return false;
             });
@@ -60,7 +61,7 @@
                     $cartItems.append(
                         '<article class="c-product js-product">' +
                             '<div class="c-product__wrapper js-product-wrapper">' +
-                                '<a href="/pdp/" class="c-product__link">' +
+                                '<a href="' + item.link + '" class="c-product__link">' +
                                     '<div class="c-product__details">' +
                                         '<h1 class="c-heading c--h4 c-product__title">' + item.item + '</h1>' +
                                         '<p class="c-product__price">$' + item.price + '</p>' +

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/templates/account-page.css">
+    </head>
+    <body class="t-account-page">
+        <div class="u-container c--bordered">
+            <h1 class="c-heading c--h2">Account Details</h1>
+            <h2 class="c-heading c--h3">Your Details</h2>
+            <form>
+                <label>First Name:</label>
+                <input type="text" name="first">
+                <label>Last Name:</label>
+                <input type="text" name="last">
+                <input type="submit" value="Update" class="c-button c--sm c--cta">
+            </form>
+        </div>
+        <div class="u-container">
+            <h2 class="c-heading c--h3">Password</h2>
+            <form>
+                <label>New Password:</label>
+                <input type="text" name="password">
+                <label>Retype Password:</label>
+                <input type="text" name="confirm">
+                <input type="submit" value="Update" class="c-button c--sm c--cta">
+            </form>
+        </div>
+
+        <script src="/js/jquery.min.js"></script>
+
+        <!-- Add your scripts here -->
+        <script src="/js/backbone-events.js"></script>
+        <script src="/js/astro.js"></script>
+        <!-- Add your scripts here -->
+    </body>
+</html>
