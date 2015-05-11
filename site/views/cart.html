@@ -8,7 +8,15 @@
     </head>
     <body class="t-cart">
         <h1 class="c-heading c--h3 c--header">My Cart</h1>
-        <section class="c-product-list">
+        <section class="c-product-list"></section>
+        <section class="c-checkout">
+            <div class="c-checkout__total">
+                <span class="c-checkout__total-title">Total</span>
+                <span class="c-checkout__total-number">$2599.98</span>
+            </div>
+            <div class="c-checkout__action">
+                <button class="c-button c--lg c--cta">Checkout</button>
+            </div>
         </section>
 
         <script src="/js/jquery.min.js"></script>
@@ -61,7 +69,7 @@
                     $cartItems.append(
                         '<article class="c-product js-product">' +
                             '<div class="c-product__wrapper js-product-wrapper">' +
-                                '<a href="' + item.link + '" class="c-product__link">' +
+                                '<a href="/' + item.link + '/" class="c-product__link">' +
                                     '<div class="c-product__details">' +
                                         '<h1 class="c-heading c--h4 c-product__title">' + item.item + '</h1>' +
                                         '<p class="c-product__price">$' + item.price + '</p>' +

@@ -380,3 +380,24 @@ textarea {
     -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
     box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
 }
+
+/* Checkout */
+
+.c-checkout {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, .05);
+    -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .05);
+}
+
+.c-checkout__total {
+    padding: 2rem;
+}
+
+.c-checkout__action {
+    display: flex;
+    padding: 2rem;
+    background: #f2f2f2;
+}
