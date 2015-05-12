@@ -215,6 +215,7 @@ textarea {
 /* Product List */
 
 .c-product-list {
+    margin-bottom: 20rem;
 }
 
 /* Product */
@@ -387,17 +388,44 @@ textarea {
     position: fixed;
     bottom: 0;
     width: 100%;
+    background: #fff;
     -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, .05);
     -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, .05);
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .05);
+    z-index: 1;
 }
 
 .c-checkout__total {
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
     padding: 2rem;
+    font-size: 2.25rem;
+}
+
+.c-checkout__total-number {
+    font-weight: bold;
 }
 
 .c-checkout__action {
     display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
     padding: 2rem;
     background: #f2f2f2;
+}
+
+.c-checkout__action .c-button {
+    width: 100%;
 }
