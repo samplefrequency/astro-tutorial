@@ -265,7 +265,6 @@ textarea {
 /* Product List */
 
 .c-product-list {
-    height: 100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
