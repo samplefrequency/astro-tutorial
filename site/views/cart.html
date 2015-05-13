@@ -6,9 +6,9 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/templates/cart.css">
     </head>
-    <body class="t-cart">
+    <body class="t-cart c--empty">
         <h1 class="c-heading c--h3 c--header js-header">My Cart</h1>
-        <section class="c-product-list c--list js-product-list"></section>
+        <section class="c-product-list c--list u-clear js-product-list"></section>
         <section class="c-checkout js-checkout">
             <div class="c-checkout__total">
                 <span class="c-checkout__total-title">Total</span>
@@ -72,12 +72,16 @@
             }
 
             var updateCartItems = function() {
+                updateCartTotal();
+
                 var cart = JSON.parse(localStorage.getItem("cart")) || [];
 
                 var item;
                 var $cartItems = $('.c-product-list');
                 $cartItems.empty();
-                for (var i = 0, length = cart.length; i < cart.length; i++) {
+                var cartLength = cart.length;
+
+                for (var i = 0; i < cartLength; i++) {
                     item = cart[i];
 
                     $cartItems.append(
@@ -98,16 +102,21 @@
                         '</article>'
                     );
                 }
-
-                updateCartTotal();
             };
 
             var updateCartTotal = function() {
                 var item;
                 var totalPrice = 0.00;
                 var cart = JSON.parse(localStorage.getItem("cart")) || [];
+                var cartLength = cart.length;
+                
+                if (cartLength === 0) {
+                    $('body').addClass('c--empty');
+                } else {
+                    $('body').removeClass('c--empty');
+                }
 
-                for (var i = 0, length = cart.length; i < cart.length; i++) {
+                for (var i = 0; i < cartLength; i++) {
                     item = cart[i];
                     totalPrice += parseFloat(item.price);
                 }
