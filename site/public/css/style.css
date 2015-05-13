@@ -95,13 +95,20 @@ h6,
 }
 
 .c--header {
-    line-height: 6rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 6rem;
     margin: 0;
     padding: 0 2rem 0;
+    background: #f2f2f2;
     -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
     -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
-    background: #f2f2f2;
 }
 
 form {
@@ -504,7 +511,8 @@ textarea {
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between;
-    padding: 2rem;
+    height: 6rem;
+    padding: 0 2rem;
     font-size: 2.25rem;
 }
 
@@ -519,6 +527,7 @@ textarea {
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+    height: 6rem;
     padding: 2rem;
     background: #f2f2f2;
 }
