@@ -29,7 +29,7 @@ body {
 }
 
 .t-cart.c--empty .c-product-list::after {
-    content: 'Nothing in you cart.';
+    content: 'There\'s nothing in you cart.';
     display: block;
     color: #ccc;
 }
