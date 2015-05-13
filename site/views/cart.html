@@ -12,7 +12,7 @@
         <section class="c-checkout js-checkout">
             <div class="c-checkout__total">
                 <span class="c-checkout__total-title">Total</span>
-                <span class="c-checkout__total-number">$2599.98</span>
+                <span class="c-checkout__total-number js-cart-total">$0.00</span>
             </div>
             <div class="c-checkout__action">
                 <button class="c-button c--lg c--cta c--stretched">Checkout</button>
@@ -23,8 +23,8 @@
         <script src="/js/backbone-events.js"></script>
         <script src="/js/astro.js"></script>
         <script>
+            // Show extra actions
             $('body').on('click', '.js-toggle-actions', function() {
-                // Hide all other actions first
                 $('.js-product').removeClass('c--actions-visible');
                 $(this).closest('.js-product').addClass('c--actions-visible');
                 return false;
@@ -34,6 +34,7 @@
                 $(this).closest('.js-product').removeClass('c--actions-visible');
             });
 
+            // Remove an item from the cart
             $('body').on('click', '.js-remove', function() {
                 var $product = $(this).closest('.js-product');
                 $product.addClass('c--removed');
@@ -44,11 +45,13 @@
                 setTimeout(function() {
                     $product.remove();
                     removeCartItem(index);
+                    updateCartTotal();
                 }, 500);
 
                 return false;
             });
 
+            // Close all visible actions
             $('body').on('click', function() {
                 var $visibleActions = $('.js-product.c--actions-visible');
                 $visibleActions.removeClass('c--actions-visible');
@@ -56,6 +59,17 @@
                     return false;
                 }
             });
+
+            var removeCartItem = function(index) {
+                var cart = JSON.parse(localStorage.getItem("cart") || []);
+
+                if (index === 0) {
+                    cart = cart.slice(1);
+                } else {
+                    cart = cart.slice(0, index).concat(cart.slice(index + 1));
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
 
             var updateCartItems = function() {
                 var cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -84,23 +98,26 @@
                         '</article>'
                     );
                 }
+
+                updateCartTotal();
             };
+
+            var updateCartTotal = function() {
+                var item;
+                var totalPrice = 0.00;
+                var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                for (var i = 0, length = cart.length; i < cart.length; i++) {
+                    item = cart[i];
+                    totalPrice += parseFloat(item.price);
+                }
+
+                $('.js-cart-total').text("$" + totalPrice.toFixed(2));
+            }
 
             window.addEventListener('storage', updateCartItems);
 
-            var removeCartItem = function(index) {
-                var cart = JSON.parse(localStorage.getItem("cart") || []);
-
-                if (index === 0) {
-                    cart = cart.slice(1);
-                } else {
-                    cart = cart.slice(0, index).concat(cart.slice(index + 1));
-                }
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
-
             updateCartItems();
-
         </script>
     </body>
 </html>
