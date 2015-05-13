@@ -51,12 +51,16 @@ p {
     margin: 0 0 2rem 0;
 }
 
-a,
-* a {
+a {
     color: #1ccdab;
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:hover,
+a:focus {
+    color: #19b394;
 }
 
 img {
@@ -192,6 +196,11 @@ textarea {
     text-transform: uppercase;
 }
 
+.c-button.c--cta:hover,
+.c-button.c--cta:focus {
+    background: #19b394;
+}
+
 .c-button.c--sm {
     padding: 1.5rem 2rem;
     -webkit-border-radius: 1rem;
@@ -235,8 +244,18 @@ textarea {
     background: red;
 }
 
+.c-button.c--remove:hover,
+.c-button.c--remove:focus {
+    background: #e50000;
+}
+
 .c-button.c--track {
     background: #1ccdab;
+}
+
+.c-button.c--track:hover,
+.c-button.c--track:focus {
+    background: #19b394;
 }
 
 .c-button:hover {
@@ -544,5 +563,3 @@ textarea {
     padding: 2rem;
     background: #f2f2f2;
 }
-
-.c-checkout__action {
