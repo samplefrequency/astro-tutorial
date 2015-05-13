@@ -64,7 +64,7 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 2rem 0;
+    margin: 2rem 0;
     font-weight: bold;
     line-height: 1;
 }
@@ -141,13 +141,14 @@ textarea {
 
 .u-container {
     width: 100%;
-    padding: 2rem;
+    padding: 0 2rem;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 .u-container.c--bordered {
+    padding-bottom: 2rem;
     box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
 }
 
@@ -232,6 +233,10 @@ textarea {
 
 .c-button.c--remove {
     background: red;
+}
+
+.c-button.c--track {
+    background: #1ccdab;
 }
 
 .c-button:hover {
@@ -444,6 +449,10 @@ textarea {
 
 .c-product__price {
     margin-bottom: 0.5rem;
+}
+
+.c--list .c-product__price {
+    margin-bottom: 0;
 }
 
 .c-product__meta {
