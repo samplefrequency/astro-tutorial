@@ -41,7 +41,7 @@ body {
     padding: 0;
     background: #f2f2f2;
     color: #595959;
-    font: 2rem/1.5 helvetica, serif;
+    font: 2em/1.5 helvetica, serif;
     font-style: normal;
     -webkit-font-smoothing: subpixel-antialiased;
     -webkit-text-size-adjust: none;
@@ -149,6 +149,12 @@ textarea {
     overflow: hidden;
 }
 
+.u-clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /**
 * Components
 */
@@ -215,7 +221,6 @@ textarea {
 /* Product List */
 
 .c-product-list {
-    margin-bottom: 20rem;
 }
 
 /* Product */
