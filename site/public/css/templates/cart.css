@@ -4,60 +4,16 @@ body {
     background-color: #fff;
 }
 
+.t-cart .c-heading.c--header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
 .t-cart .c-product-list {
     margin-bottom: 20rem;
-}
-
-
-.t-cart .c-product {
-    position: relative;
-}
-
-.t-cart .c-product__wrapper {
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
-    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
-}
-
-.t-cart .c-product__link {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-}
-
-.t-cart .c-product__image {
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: 14rem;
-}
-
-.t-cart .c-product__details {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 2rem 0 2rem 1rem;
-    text-align: left;
-}
-
-.t-cart .c-product__title {
-    margin-left: 0;
 }
 
 .t-cart .c-button.c--more {
@@ -66,31 +22,4 @@ body {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-}
-
-.t-cart .c-product__actions {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: stretch;
-    -moz-box-align: stretch;
-    -ms-flex-align: stretch;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 25%;
-    text-align: center;
-}
-
-.t-cart .c-button.c--remove {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
 }

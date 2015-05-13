@@ -2,26 +2,7 @@
 * PLP
 */
 
-.t-plp .c-product {
-    float: left;
-    width: 50%;
-}
-
-.t-plp .c-product__wrapper {
-    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
-    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
-}
-
 .t-plp .c-button.c--cta {
     margin-top: auto;
     margin-bottom: 2rem;
-}
-
-.t-plp .c-product {
-    float: left;
-    width: 50%;
-    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
-    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
 }
