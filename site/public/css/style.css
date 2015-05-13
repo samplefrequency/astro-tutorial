@@ -55,6 +55,8 @@ a,
 * a {
     color: #1ccdab;
     text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 img {
@@ -172,6 +174,7 @@ textarea {
     padding: 0;
     border: 0;
     outline: none;
+    line-height: 1;
 }
 
 .c-button.c--more {
@@ -189,14 +192,15 @@ textarea {
 }
 
 .c-button.c--sm {
-    padding: 1rem 2rem;
-    -webkit-border-radius: 0.5rem;
-    border-radius: 0.5rem;
+    padding: 1.5rem 2rem;
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
     font-size: 1.5rem;
 }
 
 .c-button.c--lg {
     padding: 2rem 3rem;
+    -webkit-border-radius: 1rem;
     border-radius: 1rem;
     font-size: 2rem;
 }
