@@ -18,7 +18,7 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = 'http://10.10.1.63:5000/';
+    var baseUrl = 'http://<Your IP Address>:5000/';
     var cartPath = '/cart';
     var accountPath = '/account';
 
@@ -85,26 +85,34 @@ function(
         return parsedUrl.pathname;
     }
 
-    Promise.join(mainWebViewPromise, headerPromise, function(mainWebView, header) {
-        mainWebView.on('navigate' , function(params) {
-            var path = getPathFromUrl(params.url);
+    Promise.join(mainWebViewPromise, headerPromise, drawerPromise,
+        function(mainWebView, header, drawer) {
 
-            console.log("Navigating to " + path);
-            if (path !== '') {
-                header.setLeftIcon(baseUrl + '/images/back.png');
-                header.off('leftIconClick');
-                header.on('leftIconClick', function() {
-                    mainWebView.back();
-                });
-            } else {
-                header.setLeftIcon(baseUrl + '/images/account.png');
-                header.off('leftIconClick');
-                header.on('leftIconClick', function() {
-                    leftDrawer.toggle();
-                });
+            var swapLeftMenuIcon = function(path) {
+                if (path !== '/') {
+                    header.setLeftIcon(baseUrl + '/images/back.png');
+                    header.off('leftIconClick');
+                    header.on('leftIconClick', function() {
+                        mainWebView.back();
+                    });
+                } else {
+                    header.setLeftIcon(baseUrl + '/images/account.png');
+                    header.off('leftIconClick');
+                    header.on('leftIconClick', function() {
+                        drawer.toggleLeftMenu();
+                    });
+                }
             }
 
-        });
+            mainWebView.on('navigate' , function(params) {
+                var path = getPathFromUrl(params.url);
+                swapLeftMenuIcon(path);
+            });
+
+            mainWebView.on('back', function(params) {
+                var path = getPathFromUrl(params.url);
+                swapLeftMenuIcon(path);
+            });
     });
 
     // Make sure the cart web view doesn't navigate anywhere but the cart
