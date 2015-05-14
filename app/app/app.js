@@ -18,7 +18,7 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = 'http://10.10.1.63:5000/';
+    var baseUrl = 'http://<Your IP Address>:5000/';
     var cartPath = '/cart';
     var accountPath = '/account';
 
