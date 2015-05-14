@@ -6,6 +6,19 @@ body {
     background-color: #fff;
 }
 
+.t-cart .c-heading.c--header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.t-cart .c-product-list {
+    padding-top: 6rem;
+    padding-bottom: 16rem;
+}
+
 .t-cart.c--empty .c-product-list {
     display: -webkit-box;
     display: -moz-box;
@@ -22,6 +35,7 @@ body {
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+    height: 100%;
     padding-bottom: 0;
     -moz-transition: all 0.25s ease-out;
     -webkit-transition: all 0.25s ease-out;
@@ -32,19 +46,6 @@ body {
     content: 'There\'s nothing in you cart.';
     display: block;
     color: #ccc;
-}
-
-.t-cart .c-heading.c--header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-}
-
-.t-cart .c-product-list {
-    padding-top: 6rem;
-    padding-bottom: 16rem;
 }
 
 .t-cart .c-button.c--more {
