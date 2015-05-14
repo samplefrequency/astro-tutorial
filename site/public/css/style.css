@@ -47,6 +47,20 @@ body {
     -webkit-text-size-adjust: none;
 }
 
+body::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: red;
+    z-index: 100;
+    top: -10px;
+    position: fixed;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
+
 p {
     margin: 0 0 2rem 0;
 }
