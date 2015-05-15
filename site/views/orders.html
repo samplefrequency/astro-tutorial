@@ -116,10 +116,6 @@
                 return false;
             });
 
-            $('body').on('click', '.js-product-wrapper', function() {
-                $(this).closest('.js-product').removeClass('c--actions-visible');
-            });
-
             $('body').on('click', '.js-remove', function() {
                 var $product = $(this).closest('.js-product');
                 $product.addClass('c--removed');
