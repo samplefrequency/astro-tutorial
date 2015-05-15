@@ -12,7 +12,7 @@ app.get('/', function(request, response) {
     response.render('index.html');
 });
 
-// Flyouts
+// Flyouts / Navigation Drawers
 
 app.get('/account/', function(request, response) {
     response.render('account.html');
@@ -22,7 +22,7 @@ app.get('/cart/', function(request, response) {
     response.render('cart.html');
 });
 
-// Account
+// Account Pages
 
 app.get('/details/', function(request, response) {
     response.render('details.html');
