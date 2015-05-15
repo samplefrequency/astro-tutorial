@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/astro-cloned-scaffold.iml" filepath="$PROJECT_DIR$/astro-cloned-scaffold.iml" />
+      <module fileurl="file://$PROJECT_DIR$/astro-scaffold.iml" filepath="$PROJECT_DIR$/astro-scaffold.iml" />
       <module fileurl="file://$PROJECT_DIR$/scaffold/scaffold.iml" filepath="$PROJECT_DIR$/scaffold/scaffold.iml" />
     </modules>
   </component>

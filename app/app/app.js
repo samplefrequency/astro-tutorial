@@ -18,9 +18,9 @@ function(
 ) {
 
     // Enter your site url here
-    var baseUrl = 'http://10.10.1.63:5000/';
-    var cartPath = '/cart';
-    var accountPath = '/account';
+    var BASE_URL = 'http://10.10.1.63:5000/';
+    var CART_PATH = '/cart';
+    var ACCOUNT_PATH = '/account';
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
@@ -33,14 +33,14 @@ function(
 
     // Start the app at the base url
     mainWebViewPromise.then(function(mainWebView) {
-        mainWebView.navigate(baseUrl);
+        mainWebView.navigate(BASE_URL);
     });
 
     accountWebViewPromise.then(function(accountWebView) {
-        accountWebView.navigate(baseUrl + 'account');
+        accountWebView.navigate(BASE_URL + 'account');
     });
 
-    // Use the mainWebView as the main content view for our layout
+    // Use mainWebView as the main content view for our layout
     Promise.join(layoutPromise, mainWebViewPromise, function(layout, mainWebView) {
         layout.setContentView(mainWebView.address);
     });
@@ -53,9 +53,9 @@ function(
     // Create a new promise for when icons have been loaded into the header bar
     var loadIconPromise = headerPromise.then(function(headerBar){
         return Promise.join(
-            headerBar.setLeftIcon(baseUrl + '/images/account.png'),
-            headerBar.setRightIcon(baseUrl + '/images/cart.png'),
-            headerBar.setCenterIcon(baseUrl + '/images/velo.png'),
+            headerBar.setLeftIcon(BASE_URL + '/images/account.png'),
+            headerBar.setRightIcon(BASE_URL + '/images/cart.png'),
+            headerBar.setCenterIcon(BASE_URL + '/images/velo.png'),
             headerBar.setBackgroundColor('#FFFFFF')
         );
     });
@@ -76,35 +76,43 @@ function(
     });
 
     cartWebViewPromise.then(function(webView) {
-        webView.navigate(baseUrl + "cart/");
+        webView.navigate(BASE_URL + "cart/");
     });
 
     var getPathFromUrl = function(url) {
         var parsedUrl = document.createElement('a');
         parsedUrl.href = url;
         return parsedUrl.pathname;
-    }
+    };
 
-    Promise.join(mainWebViewPromise, headerPromise, function(mainWebView, header) {
-        mainWebView.on('navigate' , function(params) {
-            var path = getPathFromUrl(params.url);
+    Promise.join(mainWebViewPromise, headerPromise, drawerPromise,
+        function(mainWebView, header, drawer) {
 
-            console.log("Navigating to " + path);
-            if (path !== '') {
-                header.setLeftIcon(baseUrl + '/images/back.png');
-                header.off('leftIconClick');
-                header.on('leftIconClick', function() {
-                    mainWebView.back();
-                });
-            } else {
-                header.setLeftIcon(baseUrl + '/images/account.png');
-                header.off('leftIconClick');
-                header.on('leftIconClick', function() {
-                    leftDrawer.toggle();
-                });
-            }
+            var swapLeftMenuIcon = function(path) {
+                if (path !== '/') {
+                    header.setLeftIcon(BASE_URL + '/images/back.png');
+                    header.off('leftIconClick');
+                    header.on('leftIconClick', function() {
+                        mainWebView.back();
+                    });
+                } else {
+                    header.setLeftIcon(BASE_URL + '/images/account.png');
+                    header.off('leftIconClick');
+                    header.on('leftIconClick', function() {
+                        drawer.toggleLeftMenu();
+                    });
+                }
+            };
 
-        });
+            mainWebView.on('navigate' , function(params) {
+                var path = getPathFromUrl(params.url);
+                swapLeftMenuIcon(path);
+            });
+
+            mainWebView.on('back', function(params) {
+                var path = getPathFromUrl(params.url);
+                swapLeftMenuIcon(path);
+            });
     });
 
     // Make sure the cart web view doesn't navigate anywhere but the cart
@@ -115,11 +123,11 @@ function(
                 var url = params.url;
                 var path = getPathFromUrl(url);
 
-                if (path === cartPath) {
+                if (path === CART_PATH) {
                     cartWebView.navigate(url);
                     return;
                 }
-                mainWebView.navigate(url);
+                mainWebView.events.trigger('navigate', {url: url});
                 drawer.hideRightMenu();
             });
     });
@@ -132,13 +140,11 @@ function(
                 var url = params.url;
                 var path = getPathFromUrl(url);
 
-                if (path === accountPath) {
+                if (path === ACCOUNT_PATH) {
                     accountWebView.navigate(url);
                     return;
                 }
-                mainWebView.events.trigger('navigate', {
-                    url: url
-                });
+                mainWebView.events.trigger('navigate', {url: url});
                 drawer.hideLeftMenu();
             });
     });

@@ -30,10 +30,6 @@
                 return false;
             });
 
-            $('body').on('click', '.js-product-wrapper', function() {
-                $(this).closest('.js-product').removeClass('c--actions-visible');
-            });
-
             // Remove an item from the cart
             $('body').on('click', '.js-remove', function() {
                 var $product = $(this).closest('.js-product');
@@ -63,11 +59,8 @@
             var removeCartItem = function(index) {
                 var cart = JSON.parse(localStorage.getItem("cart") || []);
 
-                if (index === 0) {
-                    cart = cart.slice(1);
-                } else {
-                    cart = cart.slice(0, index).concat(cart.slice(index + 1));
-                }
+                cart.splice(index, 1);
+
                 localStorage.setItem('cart', JSON.stringify(cart));
             }
 
@@ -109,12 +102,8 @@
                 var totalPrice = 0.00;
                 var cart = JSON.parse(localStorage.getItem("cart")) || [];
                 var cartLength = cart.length;
-                
-                if (cartLength === 0) {
-                    $('body').addClass('c--empty');
-                } else {
-                    $('body').removeClass('c--empty');
-                }
+
+                $('body').toggleClass('c--empty', cartLength === 0);
 
                 for (var i = 0; i < cartLength; i++) {
                     item = cart[i];

@@ -5,9 +5,8 @@ import android.os.Bundle;
 import com.mobify.astro.AstroActivity;
 import com.mobify.astro.plugins.ApplicationPlugin;
 import com.mobify.astro.plugins.AnchoredLayoutPlugin;
-import com.mobify.astro.plugins.headerbarplugin.HeaderBarPlugin;
+import com.mobify.astro.plugins.HeaderBarPlugin;
 import com.mobify.astro.plugins.ModalViewPlugin;
-import com.mobify.astro.plugins.SplashScreenPlugin;
 import com.mobify.astro.plugins.webviewplugin.WebViewPlugin;
 import com.mobify.astro.plugins.AstroWorkerPlugin;
 import com.mobify.astro.plugins.DeviceNetworkPlugin;
@@ -29,7 +28,6 @@ public class MainActivity extends AstroActivity {
         pluginManager.register(DrawerPlugin.class);
         pluginManager.register(WebViewPlugin.class);
         pluginManager.register(AnchoredLayoutPlugin.class);
-        pluginManager.register(SplashScreenPlugin.class);
         pluginManager.register(ApplicationPlugin.class);
         pluginManager.register(ModalViewPlugin.class);
         pluginManager.register(HeaderBarPlugin.class);
