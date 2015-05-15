@@ -21,6 +21,10 @@ function(
     var BASE_URL = 'http://10.10.1.63:5000/';
     var CART_PATH = '/cart';
     var ACCOUNT_PATH = '/account';
+    var LOGO_URL = BASE_URL + '/images/velo.png';
+    var ACCOUNT_ICON_URL = BASE_URL + '/images/account.png';
+    var CART_ICON_URL = BASE_URL + '/images/cart.png';
+    var BACK_ICON_URL = BASE_URL + '/images/back.png';
 
     // Initialize plugins
     var applicationPromise = ApplicationPlugin.init();
@@ -37,7 +41,7 @@ function(
     });
 
     accountWebViewPromise.then(function(accountWebView) {
-        accountWebView.navigate(BASE_URL + 'account');
+        accountWebView.navigate(BASE_URL + 'account/');
     });
 
     // Use mainWebView as the main content view for our layout
@@ -53,9 +57,9 @@ function(
     // Create a new promise for when icons have been loaded into the header bar
     var loadIconPromise = headerPromise.then(function(headerBar){
         return Promise.join(
-            headerBar.setLeftIcon(BASE_URL + '/images/account.png'),
-            headerBar.setRightIcon(BASE_URL + '/images/cart.png'),
-            headerBar.setCenterIcon(BASE_URL + '/images/velo.png'),
+            headerBar.setLeftIcon(ACCOUNT_ICON_URL),
+            headerBar.setRightIcon(CART_ICON_URL),
+            headerBar.setCenterIcon(LOGO_URL),
             headerBar.setBackgroundColor('#FFFFFF')
         );
     });
@@ -76,7 +80,7 @@ function(
     });
 
     cartWebViewPromise.then(function(webView) {
-        webView.navigate(BASE_URL + "cart/");
+        webView.navigate(BASE_URL + 'cart/');
     });
 
     var getPathFromUrl = function(url) {
@@ -90,13 +94,13 @@ function(
 
             var swapLeftMenuIcon = function(path) {
                 if (path !== '/') {
-                    header.setLeftIcon(BASE_URL + '/images/back.png');
+                    header.setLeftIcon(BACK_ICON_URL);
                     header.off('leftIconClick');
                     header.on('leftIconClick', function() {
                         mainWebView.back();
                     });
                 } else {
-                    header.setLeftIcon(BASE_URL + '/images/account.png');
+                    header.setLeftIcon(ACCOUNT_ICON_URL);
                     header.off('leftIconClick');
                     header.on('leftIconClick', function() {
                         drawer.toggleLeftMenu();
