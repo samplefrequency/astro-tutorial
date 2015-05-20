@@ -3,8 +3,8 @@ var exphbs  = require('express-handlebars');
 
 var app = express();
 
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+app.engine('.hbs', exphbs({extname: '.hbs', defaultLayout: 'main'}));
+app.set('view engine', '.hbs');
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 // Root / PLP
 
 app.get('/', function(request, response) {
-    response.render('index.handlebars', {
+    response.render('index.hbs', {
         bodyClass: 't-plp',
         styles: ['/css/templates/plp.css'],
         scripts: ['/js/cart-add.js']
@@ -22,14 +22,14 @@ app.get('/', function(request, response) {
 // Flyouts / Navigation Drawers
 
 app.get('/account/', function(request, response) {
-    response.render('account.handlebars', {
+    response.render('account.hbs', {
         bodyClass: 't-account',
         styles: ['/css/templates/account.css']
     });
 });
 
 app.get('/cart/', function(request, response) {
-    response.render('cart.handlebars', {
+    response.render('cart.hbs', {
         bodyClass: 't-cart c--empty',
         styles: ['/css/templates/cart.css'],
         scripts: ['/js/cart-actions.js', '/js/cart-state.js']
@@ -39,14 +39,14 @@ app.get('/cart/', function(request, response) {
 // Account Pages
 
 app.get('/details/', function(request, response) {
-    response.render('details.handlebars', {
+    response.render('details.hbs', {
         bodyClass: 't-account-page',
         styles: ['/css/templates/account-page.css']
     });
 });
 
 app.get('/orders/', function(request, response) {
-    response.render('orders.handlebars', {
+    response.render('orders.hbs', {
         bodyClass: 't-account-page',
         styles: ['/css/templates/account-page.css'],
         scripts: ['/js/cart-actions.js']
@@ -54,21 +54,21 @@ app.get('/orders/', function(request, response) {
 });
 
 app.get('/credit-cards/', function(request, response) {
-    response.render('credit-cards.handlebars', {
+    response.render('credit-cards.hbs', {
         bodyClass: 't-account-page',
         styles: ['/css/templates/account-page.css']
     });
 });
 
 app.get('/notifications/', function(request, response) {
-    response.render('notifications.handlebars', {
+    response.render('notifications.hbs', {
         bodyClass: 't-account-page',
         styles: ['/css/templates/account-page.css']
     });
 });
 
 app.get('/help/', function(request, response) {
-    response.render('help.handlebars', {
+    response.render('help.hbs', {
         bodyClass: 't-account-page',
         styles: ['/css/templates/account-page.css']
     });
@@ -77,7 +77,7 @@ app.get('/help/', function(request, response) {
 // PDP
 
 app.get('/road-bike/', function(request, response) {
-    response.render('road-bike.handlebars', {
+    response.render('road-bike.hbs', {
         bodyClass: 't-pdp',
         styles: ['/css/templates/pdp.css'],
         scripts: ['/js/cart-add.js']
@@ -85,7 +85,7 @@ app.get('/road-bike/', function(request, response) {
 });
 
 app.get('/commuter/', function(request, response) {
-    response.render('commuter.handlebars', {
+    response.render('commuter.hbs', {
         bodyClass: 't-pdp',
         styles: ['/css/templates/pdp.css'],
         scripts: ['/js/cart-add.js']
@@ -93,7 +93,7 @@ app.get('/commuter/', function(request, response) {
 });
 
 app.get('/city-bike/', function(request, response) {
-    response.render('city-bike.handlebars', {
+    response.render('city-bike.hbs', {
         bodyClass: 't-pdp',
         styles: ['/css/templates/pdp.css'],
         scripts: ['/js/cart-add.js']
@@ -101,7 +101,7 @@ app.get('/city-bike/', function(request, response) {
 });
 
 app.get('/mountain-bike/', function(request, response) {
-    response.render('mountain-bike.handlebars', {
+    response.render('mountain-bike.hbs', {
         bodyClass: 't-pdp',
         styles: ['/css/templates/pdp.css'],
         scripts: ['/js/cart-add.js']
@@ -109,7 +109,7 @@ app.get('/mountain-bike/', function(request, response) {
 });
 
 app.get('/hybrid-bike/', function(request, response) {
-    response.render('hybrid-bike.handlebars', {
+    response.render('hybrid-bike.hbs', {
         bodyClass: 't-pdp',
         styles: ['/css/templates/pdp.css'],
         scripts: ['/js/cart-add.js']
@@ -117,7 +117,7 @@ app.get('/hybrid-bike/', function(request, response) {
 });
 
 app.get('/fixie/', function(request, response) {
-    response.render('fixie.handlebars', {
+    response.render('fixie.hbs', {
         bodyClass: 't-pdp',
         styles: ['/css/templates/pdp.css'],
         scripts: ['/js/cart-add.js']
