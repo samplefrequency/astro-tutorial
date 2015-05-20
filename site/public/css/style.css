@@ -190,7 +190,6 @@ textarea {
     padding: 0;
     border: 0;
     outline: none;
-    line-height: 1;
 }
 
 .c-button.c--more {
@@ -249,6 +248,7 @@ textarea {
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
     color: #fff;
+    font-size: 2rem;
 }
 
 .c-button.c--remove {
