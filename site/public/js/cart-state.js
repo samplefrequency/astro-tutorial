@@ -70,7 +70,7 @@ var updateCartTotal = function() {
     }
 
     $('.js-cart-total').text("$" + totalPrice.toFixed(2));
-}
+};
 
 window.addEventListener('storage', updateCartItems);
 

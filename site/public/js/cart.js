@@ -3,14 +3,12 @@ $(".js-add").click(function() {
     var image = $(item).find('.js-product-image')[0];
 
     var cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(
-        {
-            item: item.dataset.item,
-            link: item.dataset.url,
-            price: item.dataset.price,
-            image: image.src
-        }
-    );
+    cart.push({
+        item: item.dataset.item,
+        link: item.dataset.url,
+        price: item.dataset.price,
+        image: image.src
+    });
 
     localStorage.setItem("cart", JSON.stringify(cart));
 });
