@@ -2,4 +2,4 @@
 npm-debug.log
 gradle.properties
 
-app/.idea/
+native-app/.idea/
