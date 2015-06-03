@@ -28,16 +28,16 @@ function(
 
     // Use mainWebView as the main content view for our layout
     Promise.join(layoutPromise, mainWebViewPromise, function(layout, mainWebView) {
-        layout.setContentView(mainWebView.address);
+        layout.setContentView(mainWebView);
     });
 
     // Route all unhandled key presses to mainWebView
     Promise.join(applicationPromise, mainWebViewPromise, function(application, mainWebView){
-        application.setMainInputPlugin(mainWebView.address);
+        application.setMainInputPlugin(mainWebView);
     });
 
     Promise.join(applicationPromise, layoutPromise, function(application, layout) {
-        application.setMainViewPlugin(layout.address);
+        application.setMainViewPlugin(layout);
     });
 
 }, undefined, true);
