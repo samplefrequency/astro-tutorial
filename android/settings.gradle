@@ -1,0 +1,2 @@
+include ':velo', ':astro'
+project(':astro').projectDir = new File(settingsDir, '../astro/android')

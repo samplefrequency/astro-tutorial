@@ -1,0 +1,9 @@
+{
+  "name": "astro-velo",
+  "version": "0.2.0",
+  "author": "Mobify",
+  "dependencies": {},
+  "scripts": {
+    "test": "./scripts/ios-appium.sh"
+  }
+}
