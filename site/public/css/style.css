@@ -469,6 +469,7 @@ textarea {
 
 .c-product__title {
     margin: 0 2rem 0.5rem 2rem;
+    font-size: 2.0rem;
 }
 
 .c--list .c-product__title {

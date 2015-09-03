@@ -1,1 +1,3 @@
-// Add your code here
+$(".js-add").click(function() {
+    Astro.trigger('addToCartClicked');
+});
