@@ -3,7 +3,6 @@ package com.mobify.velo;
 import android.os.Bundle;
 
 import com.mobify.astro.AstroActivity;
-import com.mobify.astro.plugins.AnimationPlugin;
 import com.mobify.astro.plugins.AnchoredLayoutPlugin;
 import com.mobify.astro.plugins.AstroWorker;
 import com.mobify.astro.plugins.TabBarPlugin;
@@ -32,7 +31,6 @@ public class MainActivity extends AstroActivity {
         pluginManager.register(AnchoredLayoutPlugin.class);
         pluginManager.register(ModalViewPlugin.class);
         pluginManager.register(HeaderBarPlugin.class);
-        pluginManager.register(AnimationPlugin.class);
         pluginManager.register(ImageViewPlugin.class);
         pluginManager.register(DefaultLoaderPlugin.class);
         pluginManager.register(TabBarPlugin.class);
