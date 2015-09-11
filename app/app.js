@@ -21,7 +21,6 @@ function(
   // Initialize plugins
   var mainNavigationPromise = NavigationPlugin.init();
   var layoutPromise         = AnchoredLayoutPlugin.init();
-  var cartWebViewPromise    = WebViewPlugin.init();
 
   // Start the app by navigating to the base url
   mainNavigationPromise.then(function(mainNavigationView){
