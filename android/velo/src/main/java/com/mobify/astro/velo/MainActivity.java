@@ -7,6 +7,7 @@ import com.mobify.astro.plugins.AnchoredLayoutPlugin;
 import com.mobify.astro.plugins.AstroWorker;
 import com.mobify.astro.plugins.CounterBadgePlugin;
 import com.mobify.astro.plugins.SecureStorePlugin;
+import com.mobify.astro.plugins.SharingPlugin;
 import com.mobify.astro.plugins.TabBarPlugin;
 import com.mobify.astro.plugins.headerbarplugin.HeaderBarPlugin;
 import com.mobify.astro.plugins.loaders.DefaultLoaderPlugin;
@@ -38,6 +39,7 @@ public class MainActivity extends AstroActivity {
         pluginManager.register(SecureStorePlugin.class);
         pluginManager.register(TabBarPlugin.class);
         pluginManager.register(WebViewPlugin.class);
+        pluginManager.register(SharingPlugin.class);
 
         // Create the initial worker.
         worker = new AstroWorker(this, pluginManager);
