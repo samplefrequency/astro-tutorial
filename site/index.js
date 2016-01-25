@@ -9,13 +9,29 @@ app.set('view engine', '.hbs');
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-// Root / PLP
+// Root / Index
 
 app.get('/', function(request, response) {
     response.render('index.hbs', {
-        bodyClass: 't-plp',
+        bodyClass: 't-home',
         styles: ['/css/templates/plp.css'],
         scripts: ['/js/cart-add.js']
+    });
+});
+
+// PLP
+app.get('/plp', function(request, response) {
+    response.render('plp.hbs', {
+        bodyClass: 't-plp',
+        styles: ['/css/templates/plp.css']
+    });
+});
+
+// PDP
+app.get('/pdp', function(request, response) {
+    response.render('pdp.hbs', {
+        bodyClass: 't-pdp',
+        styles: ['/css/templates/plp.css']
     });
 });
 

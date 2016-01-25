@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0EDA55691B9257CC00AB6AF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDA55681B9257CC00AB6AF7 /* Images.xcassets */; };
+		0EF1F98C1C55C140007B0405 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F98B1C55C140007B0405 /* libiconv.tbd */; };
+		0EF1F98E1C55C14A007B0405 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F98D1C55C14A007B0405 /* AVFoundation.framework */; };
+		0EF1F9901C55C153007B0405 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F98F1C55C153007B0405 /* AssetsLibrary.framework */; };
+		0EF1F9921C55C15A007B0405 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F9911C55C15A007B0405 /* CoreVideo.framework */; };
+		0EF1F9941C55C162007B0405 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F9931C55C162007B0405 /* QuartzCore.framework */; };
+		0EF1F9961C55C16A007B0405 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F9951C55C16A007B0405 /* CoreGraphics.framework */; };
+		0EF1F9981C55C174007B0405 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F9971C55C174007B0405 /* CoreImage.framework */; };
+		0EF1F99A1C55C17B007B0405 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F9991C55C17B007B0405 /* AudioToolbox.framework */; };
+		0EF1F9A61C55D13E007B0405 /* CDVBarcodeScanner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1F9A31C55D13E007B0405 /* CDVBarcodeScanner.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0EF1F9A71C55D13E007B0405 /* zxing-all-in-one.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1F9A41C55D13E007B0405 /* zxing-all-in-one.cpp */; };
+		0EF1F9A91C55D705007B0405 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F9A81C55D705007B0405 /* ImageIO.framework */; };
+		0EF1F9AB1C55D727007B0405 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF1F9AA1C55D727007B0405 /* CoreMedia.framework */; };
 		87132A201B6016FF00FC74A4 /* Astro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87132A1E1B6016FF00FC74A4 /* Astro.framework */; };
 		87132A211B6016FF00FC74A4 /* Astro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87132A1E1B6016FF00FC74A4 /* Astro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87132A221B6016FF00FC74A4 /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87132A1F1B6016FF00FC74A4 /* Cordova.framework */; };
@@ -49,6 +61,19 @@
 
 /* Begin PBXFileReference section */
 		0EDA55681B9257CC00AB6AF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0EF1F98B1C55C140007B0405 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		0EF1F98D1C55C14A007B0405 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0EF1F98F1C55C153007B0405 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		0EF1F9911C55C15A007B0405 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		0EF1F9931C55C162007B0405 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0EF1F9951C55C16A007B0405 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0EF1F9971C55C174007B0405 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		0EF1F9991C55C17B007B0405 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0EF1F9A31C55D13E007B0405 /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CDVBarcodeScanner.mm; sourceTree = "<group>"; };
+		0EF1F9A41C55D13E007B0405 /* zxing-all-in-one.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "zxing-all-in-one.cpp"; sourceTree = "<group>"; };
+		0EF1F9A51C55D13E007B0405 /* zxing-all-in-one.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zxing-all-in-one.h"; sourceTree = "<group>"; };
+		0EF1F9A81C55D705007B0405 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		0EF1F9AA1C55D727007B0405 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		87132A1E1B6016FF00FC74A4 /* Astro.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Astro.framework; path = "$(CONFIGURATION_BUILD_DIR)/Astro.framework"; sourceTree = "<group>"; };
 		87132A1F1B6016FF00FC74A4 /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = "$(CONFIGURATION_BUILD_DIR)/Cordova.framework"; sourceTree = "<group>"; };
 		87C6A8861B43044D001876CE /* velo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = velo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +96,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF1F9AB1C55D727007B0405 /* CoreMedia.framework in Frameworks */,
+				0EF1F9A91C55D705007B0405 /* ImageIO.framework in Frameworks */,
+				0EF1F99A1C55C17B007B0405 /* AudioToolbox.framework in Frameworks */,
+				0EF1F9981C55C174007B0405 /* CoreImage.framework in Frameworks */,
+				0EF1F9961C55C16A007B0405 /* CoreGraphics.framework in Frameworks */,
+				0EF1F9941C55C162007B0405 /* QuartzCore.framework in Frameworks */,
+				0EF1F9921C55C15A007B0405 /* CoreVideo.framework in Frameworks */,
+				0EF1F9901C55C153007B0405 /* AssetsLibrary.framework in Frameworks */,
+				0EF1F98E1C55C14A007B0405 /* AVFoundation.framework in Frameworks */,
+				0EF1F98C1C55C140007B0405 /* libiconv.tbd in Frameworks */,
 				87132A201B6016FF00FC74A4 /* Astro.framework in Frameworks */,
 				87132A221B6016FF00FC74A4 /* Cordova.framework in Frameworks */,
 			);
@@ -86,9 +121,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EF1F9A11C55D13E007B0405 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				0EF1F9A21C55D13E007B0405 /* phonegap-plugin-barcodescanner */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		0EF1F9A21C55D13E007B0405 /* phonegap-plugin-barcodescanner */ = {
+			isa = PBXGroup;
+			children = (
+				0EF1F9A31C55D13E007B0405 /* CDVBarcodeScanner.mm */,
+				0EF1F9A41C55D13E007B0405 /* zxing-all-in-one.cpp */,
+				0EF1F9A51C55D13E007B0405 /* zxing-all-in-one.h */,
+			);
+			path = "phonegap-plugin-barcodescanner";
+			sourceTree = "<group>";
+		};
 		87C6A87D1B43044D001876CE = {
 			isa = PBXGroup;
 			children = (
+				0EF1F9AA1C55D727007B0405 /* CoreMedia.framework */,
+				0EF1F9A81C55D705007B0405 /* ImageIO.framework */,
+				0EF1F9991C55C17B007B0405 /* AudioToolbox.framework */,
+				0EF1F9971C55C174007B0405 /* CoreImage.framework */,
+				0EF1F9951C55C16A007B0405 /* CoreGraphics.framework */,
+				0EF1F9931C55C162007B0405 /* QuartzCore.framework */,
+				0EF1F9911C55C15A007B0405 /* CoreVideo.framework */,
+				0EF1F98F1C55C153007B0405 /* AssetsLibrary.framework */,
+				0EF1F98D1C55C14A007B0405 /* AVFoundation.framework */,
+				0EF1F98B1C55C140007B0405 /* libiconv.tbd */,
 				87132A1E1B6016FF00FC74A4 /* Astro.framework */,
 				87132A1F1B6016FF00FC74A4 /* Cordova.framework */,
 				87C6A8D61B430E15001876CE /* Cordova */,
@@ -150,18 +213,11 @@
 		87C6A8D61B430E15001876CE /* Cordova */ = {
 			isa = PBXGroup;
 			children = (
+				0EF1F9A11C55D13E007B0405 /* Plugins */,
 				87C6A8D71B430E15001876CE /* config.xml */,
 				87C6A8F51B430EDD001876CE /* www */,
-				87C6A8D81B430E15001876CE /* Plugins */,
 			);
 			path = Cordova;
-			sourceTree = "<group>";
-		};
-		87C6A8D81B430E15001876CE /* Plugins */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Plugins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +273,7 @@
 				TargetAttributes = {
 					87C6A8851B43044D001876CE = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = KS9S3B73SG;
 					};
 					87C6A89A1B43044D001876CE = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -288,7 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF1F9A61C55D13E007B0405 /* CDVBarcodeScanner.mm in Sources */,
 				87C6A88E1B43044D001876CE /* ViewController.swift in Sources */,
+				0EF1F9A71C55D13E007B0405 /* zxing-all-in-one.cpp in Sources */,
 				87C6A88C1B43044D001876CE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +477,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(CONFIGURATION_BUILD_DIR)",
@@ -425,6 +486,7 @@
 				INFOPLIST_FILE = velo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -432,6 +494,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(CONFIGURATION_BUILD_DIR)",
@@ -439,6 +503,7 @@
 				INFOPLIST_FILE = velo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

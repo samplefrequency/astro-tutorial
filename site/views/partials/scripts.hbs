@@ -7,3 +7,13 @@
     });
 </script>
 <!-- Add your scripts here -->
+
+<script>
+    $(function(){
+        $('.list-group a').on('click', function(e){
+            e.preventDefault();
+            var url = $(this).attr('href');
+            Astro.trigger('navigateMainView', url);
+        });
+    });
+</script>

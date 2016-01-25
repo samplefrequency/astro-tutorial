@@ -3,13 +3,59 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="/css/style.css">
         {{#if styles}}
             <link rel="stylesheet" href="{{ styles }}">
         {{/if}}
+        <script src="http://assets.mobify.com/astro/astro-client-0.6.0.min.js"></script>
     </head>
     <body {{#if bodyClass}} class="{{bodyClass}}" {{/if}}>
-        {{{body}}}
+        <script>
+            if(Astro.isRunningInApp()){
+                var el = document.body;
+                var className = 'inApp';
+                if (el.classList)
+                  el.classList.add(className);
+                else
+                  el.className += ' ' + className;
+            }
+        </script>
+
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <button type="button" class="btn btn-default navbar-btn">Cart</button>
+              <a class="navbar-brand" href="#">Rainforest</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+        <div class="container">
+            {{{body}}}
+        </div>
+
+        <div class='footer'>
+            <p class='text-center'>
+                <small> Terms and Conditions <br /> Copyright 2016 <br /> Rainforest Inc.</small>
+            </p>
+        </div>
+
         {{> scripts}}
         {{#if scripts}}
             {{#each scripts}}
