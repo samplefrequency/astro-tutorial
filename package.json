@@ -6,9 +6,5 @@
   "scripts": {
     "test": "./scripts/ios-appium.sh"
   },
-  "licenses": [
-    {
-      "url": "https://github.com/mobify/astro-tutorial/blob/develop/LICENSE"
-    }
-  ]
+  "license": "SEE LICENSE IN LICENSE"
 }
