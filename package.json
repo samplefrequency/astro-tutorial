@@ -3,7 +3,7 @@
   "version": "0.6.0",
   "author": "Mobify",
   "dependencies": {
-    "astro-sdk": "^0.7.0-dev",
+    "astro-sdk": "^0.7.0",
     "bluebird": "~2.9.24"
   },
   "devDependencies": {
