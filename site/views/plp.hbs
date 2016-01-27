@@ -1,22 +1,91 @@
 <script>
   if(Astro.isRunningInApp()){
-    Astro.trigger('setAppScreenTitle', 'Bikes');
+    Astro.trigger('setAppScreenTitle', 'Gadgets');
   }
 </script>
 
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
-  <li class="active">Shirts</li>
+  <li class="active">Gadgets</li>
 </ol>
 
 <div class="row">
     <div class='col-xs-12'>
 
 
+      <style>
+        .media.product {
+          display: block;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 15px;
+        }
+
+        .media.product .media-left div {
+          width: 63px; height: 64px; text-align: center;
+        }
+
+        .media.product .media-left div img {
+          height: 64px; display: initial;
+        }
+
+      </style>
+
+
+
         <a href='/pdp' class="media product">
           <div class="media-left">
             <div>
-              <img style='with: 64px; height: 64px;' class="media-object" src="/images/road.jpg">
+              <img class="media-object" src="/images/gadgets/1.jpg">
+            </div>
+          </div>
+          <div class="media-body">
+            <strong class="media-heading">Golden Headphones</strong> <br />
+            <small> $46.87 </small>
+          </div>
+        </a>
+
+        <a href='/pdp' class="media product">
+          <div class="media-left">
+            <div>
+              <img class="media-object" src="/images/gadgets/2.jpg">
+            </div>
+          </div>
+          <div class="media-body">
+            <strong class="media-heading">GoPro</strong> <br />
+            <small> $46.87 </small>
+          </div>
+        </a>
+
+        <a href='/pdp' class="media product">
+          <div class="media-left">
+            <div>
+              <img class="media-object" src="/images/gadgets/3.jpg">
+            </div>
+          </div>
+          <div class="media-body">
+            <strong class="media-heading">Media heading</strong> <br />
+            <small> $46.87 </small>
+          </div>
+        </a>
+
+
+        <a href='/pdp' class="media product">
+          <div class="media-left">
+            <div>
+              <img class="media-object" src="/images/gadgets/4.jpg">
+            </div>
+          </div>
+          <div class="media-body">
+            <strong class="media-heading">Media heading</strong> <br />
+            <small> $46.87 </small>
+          </div>
+        </a>
+
+
+        <a href='/pdp' class="media product">
+          <div class="media-left">
+            <div>
+              <img class="media-object" src="/images/gadgets/5.jpg">
             </div>
           </div>
           <div class="media-body">
@@ -28,7 +97,7 @@
         <a href='/pdp' class="media product">
           <div class="media-left">
             <div>
-              <img style='with: 64px; height: 64px;' class="media-object" src="/images/road.jpg">
+              <img class="media-object" src="/images/gadgets/6.jpg">
             </div>
           </div>
           <div class="media-body">
@@ -40,7 +109,7 @@
         <a href='/pdp' class="media product">
           <div class="media-left">
             <div>
-              <img style='with: 64px; height: 64px;' class="media-object" src="/images/road.jpg">
+              <img class="media-object" src="/images/gadgets/7.jpg">
             </div>
           </div>
           <div class="media-body">
