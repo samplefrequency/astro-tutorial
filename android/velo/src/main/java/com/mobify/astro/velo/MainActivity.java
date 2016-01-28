@@ -1,11 +1,11 @@
-package com.mobify.velo;
+package com.mobify.astro.velo;
 
 import android.os.Bundle;
 
 import com.mobify.astro.AstroActivity;
 import com.mobify.astro.plugins.AnchoredLayoutPlugin;
 import com.mobify.astro.plugins.AstroWorker;
-import com.mobify.astro.plugins.CounterBadgePlugin;
+import com.mobify.astro.plugins.counterbadgeplugin.CounterBadgePlugin;
 import com.mobify.astro.plugins.SecureStorePlugin;
 import com.mobify.astro.plugins.SharingPlugin;
 import com.mobify.astro.plugins.TabBarPlugin;
