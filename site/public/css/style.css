@@ -578,9 +578,9 @@ textarea {
 
 
 /* Styles go here */
-body.inApp .navbar,
-body.inApp .breadcrumb,
-body.inApp .footer {
+.inApp .navbar,
+.inApp .breadcrumb,
+.inApp .footer {
     display: none;
 }
 

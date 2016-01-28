@@ -70,13 +70,13 @@ function(
                 }
 
                 var barcodeMapping = {
-                    'notfound': 'http://www.thinkgeek.com/product/aaaa/',
-                    '9781472322531': 'https://www.thinkgeek.com/product/15b8/',
-                    '011091212197': 'http://www.thinkgeek.com/product/edf6/',
-                    '5024095212198': 'http://www.thinkgeek.com/product/edf6/'
+                    'notfound': '/city-bike/',
+                    '9781472322531': '/road-bike/',
+                    '011091212197'  : '/commuter/',
+                    '5024095212198': '/road-bike/'
                 };
 
-                var resultURL = result.text in barcodeMapping ? barcodeMapping[result.text] : barcodeMapping['notfound'];
+                var resultURL = baseUrl + (result.text in barcodeMapping ? barcodeMapping[result.text] : barcodeMapping['notfound']);
 
                 console.log('We got a barcode\n' +
                     'Result: ' + result.text + '\n' +
@@ -85,9 +85,6 @@ function(
             }, function(error) {
                 console.log('Scanning failed: ' + error);
             });
-
-            // TODO: uncomment and comment out the stuff above
-            rightDrawer.toggle();
         });
 
     });

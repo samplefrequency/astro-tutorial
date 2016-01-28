@@ -7,19 +7,16 @@
         {{#if styles}}
             <link rel="stylesheet" href="{{ styles }}">
         {{/if}}
-        <script src="http://assets.mobify.com/astro/astro-client-0.6.0.min.js"></script>
-    </head>
-    <body {{#if bodyClass}} class="{{bodyClass}}" {{/if}}>
+        <script src="http://assets.mobify.com/astro/astro-client-0.7.0.min.js"></script>
         <script>
             if(Astro.isRunningInApp()){
-                var el = document.body;
+                var el = document.documentElement;
                 var className = 'inApp';
-                if (el.classList)
-                  el.classList.add(className);
-                  el.className += ' ' + className;
+                el.classList.add(className);
             }
         </script>
-
+    </head>
+    <body {{#if bodyClass}} class="{{bodyClass}}" {{/if}}>
         <div class='navbar'>
             <img class='logo' src='/images/velo-white.png' />
         </div>
