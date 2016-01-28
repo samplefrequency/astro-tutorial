@@ -6,9 +6,7 @@ require([
     'application',
     'plugins/webViewPlugin',
     'plugins/anchoredLayoutPlugin',
-    'plugins/navigationPlugin',
-    'plugins/headerBarPlugin',
-    'plugins/drawerPlugin'
+    'plugins/navigationPlugin'
 ],
 function(
     Astro,
@@ -16,9 +14,7 @@ function(
     Application,
     WebViewPlugin,
     AnchoredLayoutPlugin,
-    NavigationPlugin,
-    HeaderBarPlugin,
-    DrawerPlugin
+    NavigationPlugin
 ) {
 
     // Enter your site url here
