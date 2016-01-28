@@ -18,7 +18,10 @@ if ! which npm 1>/dev/null 2>&1; then
 	exit 1
 fi
 
-# Build app.js.
+# Build astro
+pushd ../node_modules/astro-sdk
 npm install
-grunt build
 popd
+
+# Build app.js
+grunt build
