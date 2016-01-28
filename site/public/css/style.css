@@ -4,3 +4,24 @@ body.inApp .breadcrumb,
 body.inApp .footer {
     display: none;
 }
+
+
+.navbar {
+    height: 60px;
+    background: #1ccdab;
+}
+
+.navbar img {
+    width: 104px; height: 40px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.footer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #777;
+}
+
+
