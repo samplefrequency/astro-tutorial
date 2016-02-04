@@ -1,6 +1,6 @@
 {
   "name": "astro-velo",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "author": "Mobify",
   "dependencies": {
     "astro-sdk": "^0.7.0",
