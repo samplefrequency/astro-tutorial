@@ -14,7 +14,7 @@ Linked PRs: **(links to corresponding PRs, optional)**
 - (how to access the new / changed functionality -- fixtures, URLs)
 
 ## TODOS:
-- [ ] Update tutorial documentation in the `dev` folder (in the astro repo) to match the modified tutorial.
+- [ ] Update tutorial documentation in the `dev` folder (in the Astro repo) to match the modified tutorial.
 - [ ] Preview the docs to make sure your changes look good (see [here](https://github.com/mobify/astro#documentation) for instructions on how to preview).
 - [ ] Change works in both Android and iOS.
 - [ ] +1 from an engineer on the Astro team.
