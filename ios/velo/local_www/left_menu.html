@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no">
+
+    <!-- Navitron Styles -->
+    <link rel="stylesheet" href="vendor/css/navitron.css">
+
+    <!-- Optional Navitron Theme Style -->
+    <link rel="stylesheet" href="vendor/css/navitron-theme.css">
+
+    <!-- Example Page Styles -->
+    <link rel="stylesheet" href="assets/css/left_menu.css">
+
+    <script src="http://assets.mobify.com/astro/astro-client-0.2.0.min.js"></script>
+    <script src="vendor/js/jquery.min.js"></script>
+    <script src="vendor/js/fastclick.js"></script>
+    <script>
+        $(function() {
+            $('.navitron__astro-link').on('click', function(e){
+                var url = $(this).attr('href');
+                Astro.trigger('navitron__astro-link', url);
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+        });
+    </script>
+</head>
+<body>
+    <nav id="myNavitron" hidden>
+        <ul>
+            <li class="navitron__header" id="testing2" value="12">
+                <div class="c-bar">
+                    <span class="c-bar__heading">Browse</span>
+                </div>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Clothes</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Clothes</span>
+                        </div>
+                    </li>
+
+                            <li><a href="http://www.burlingtoncoatfactory.com/babydepot/baby-girl-clothes-57090.aspx">Baby Girl Clothes</a></li>
+                            <li><a href="/toddler-boy-clothes-57094.aspx">Baby Boy Clothes</a></li>
+                            <li><a href="#">Toddler Girl Clothes</a></li>
+                            <li><a href="#">Toddler Boy Clothes</a></li>
+                            <li><a href="#">Layette</a></li>
+                            <li><a href="#">Baby & Toddler Pajamas</a></li>
+                            <li><a href="#">Christening</a></li>
+                            <li><a href="#">Special Occasion</a></li>
+                            <li><a href="#">Coats</a></li>
+                            <li><a href="#">Baby Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Swaddles & Wearable Blankets</a></li>
+                            <li><a href="#">Baby Gifts</a></li>
+                            <li><a href="#">Baby Swimwear</a></li>
+                            <li><a href="#">Team Shop</a></li>
+
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Baby Gear</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Baby Gear</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Play Yards & Portable Beds</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Baby Carriers & More</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Baby Walkers</a>
+                    </li>
+                    <li>
+                        <a href="#">Baby Swings</a>
+                    </li>
+                    <li>
+                        <a href="#">Gyms & Playmats</a>
+                    </li>  <li>
+                          <a href="#">Infant Positioners</a>
+                      </li>  <li>
+                            <a href="#">Activity</a>
+                        </li>  <li>
+                              <a href="#">Baby Bouncers</a>
+                          </li>  <li>
+                                <a href="#">Activity Centers & Jumpers</a>
+                            </li>
+                             <li>
+                                  <a href="#">Travel Accessories</a>
+                              </li>
+                              <li>
+                                   <a href="#">Diaper Bags</a>
+                               </li>
+                               <li>
+                                    <a href="#">Baby Monitors</a>
+                                </li>
+                                <li>
+                                     <a href="#">Baby Gates </a>
+                                 </li>
+                                 <li>
+                                      <a href="#">Locks & Levers </a>
+                                  </li>
+                                  <li>
+                                       <a href="#">Covers & Plugs </a>
+                                   </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Cribs</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Cribs/span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Strollers</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Strollers</span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Car Seats</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Car Seats</span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Furniture</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Furniture</span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Feeding</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Feeding</span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Bedding</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Bedding</span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Bath and Potty</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Bedding</span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button class="navitron__next-pane" type="button">Maternity</button>
+                <ul>
+                    <li class="navitron__header">
+                        <div class="c-bar">
+                            <button class="c-button navitron__prev-pane" type="button">
+                                Back
+                            </button>
+                            <span class="c-bar__heading">Maternity</span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li><a class="navitron__astro-link" href="https://m.reddit.com">Gift Cards</a></li>
+
+            <li><a class="navitron__astro-link red" href="http://www.burlingtoncoatfactory.com">Shop Burlington</a></li>
+
+            <li><a class="navitron__astro-link blue" href="http://www.burlingtoncoatfactory.com/BabyRegistryHome.aspx">Baby Registry</a></li>
+            <li><a class="navitron__astro-link blue" href="http://www.burlingtoncoatfactory.com/ShoppingCart.aspx">Shopping Cart</a></li>
+
+            <li class="navitron__footer">
+                <div class="c-bar barcode-scanner">
+                    <span class="c-bar__heading blue">Barcode Scanner</span>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+
+    <script data-main="vendor/js/main" src="vendor/js/require.js"></script>
+
+</body>
+</html>

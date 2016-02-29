@@ -1,0 +1,49 @@
+.navitron {
+  background: #4d4d4d; }
+
+.navitron__pane {
+  background: #ffffff; }
+
+.navitron li{
+text-decoration: none;
+}
+
+.navitron__item {
+  position: relative;
+  display: block;
+  border: none;
+  padding: 10px;
+  text-decoration:none;
+  width: 100%;
+  background: none;
+  color: #252525;
+  font-size: 14px;
+  text-align: left;
+  text-transform: uppercase;}
+
+.navitron__prev-pane::before {
+  content: '';
+  display: inline-block;
+  margin-right: 12px;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-right-color: white; }
+
+.navitron__next-pane::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: block;
+  margin-top: -5px;
+  margin-right: -5px;
+  border: 5px solid transparent;
+  border-left-color: #252525; }
+
+
+
+.navitron__header{background-color: #0070b6}
+
+.navitron__footer {
+  background-color: white;
+  border-top:1px solid #d9d9d9}
