@@ -1,9 +1,9 @@
 {
   "name": "astro-velo",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "author": "Mobify",
   "dependencies": {
-    "astro-sdk": "^0.7.0",
+    "astro-sdk": "^0.8.0",
     "bluebird": "~2.9.24"
   },
   "devDependencies": {
