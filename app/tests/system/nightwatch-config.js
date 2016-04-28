@@ -33,11 +33,11 @@ module.exports = {
                 "path": ""
             },
             "desiredCapabilities": {
+                "browserName": "",
                 "fullReset": false,
                 "app": appPath,
                 "platformName": "iOS",
-                "platformVersion": "8.4",
-                "deviceName": "iPhone 6"
+                "deviceName": "iPhone 5s"
             },
             "exclude": "nightwatch-config.js"
         },
@@ -47,8 +47,7 @@ module.exports = {
                 "fullReset": false,
                 "app": appPath,
                 "platformName": "iOS",
-                "platformVersion": "8.3",
-                "deviceName": "iPhone 6"
+                "deviceName": "iPhone 5s"
             }
         }
     }

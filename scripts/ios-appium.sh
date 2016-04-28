@@ -23,7 +23,7 @@ pushd $ROOT/ios/
 xcodebuild \
     -workspace "velo.xcworkspace/" \
     -scheme "velo" \
-    -destination "platform=iOS Simulator,name=iPhone 6,OS=8.3" \
+    -destination "platform=iOS Simulator,name=iPhone 5s" \
     -derivedDataPath "build" \
     build | prettifyOutput
 popd
