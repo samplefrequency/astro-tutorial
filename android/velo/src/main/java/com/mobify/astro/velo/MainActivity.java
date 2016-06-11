@@ -3,8 +3,10 @@ package com.mobify.astro.velo;
 import android.os.Bundle;
 
 import com.mobify.astro.AstroActivity;
+import com.mobify.astro.plugins.AlertViewPlugin;
 import com.mobify.astro.plugins.AnchoredLayoutPlugin;
 import com.mobify.astro.plugins.AstroWorker;
+import com.mobify.astro.plugins.ListSelectPlugin;
 import com.mobify.astro.plugins.counterbadgeplugin.CounterBadgePlugin;
 import com.mobify.astro.plugins.SecureStorePlugin;
 import com.mobify.astro.plugins.SharingPlugin;
@@ -28,12 +30,14 @@ public class MainActivity extends AstroActivity {
 
         // Register plugins.
         // TODO: In the future we probably want to load this from a configuration file.
+        pluginManager.register(AlertViewPlugin.class);
         pluginManager.register(AnchoredLayoutPlugin.class);
         pluginManager.register(CounterBadgePlugin.class);
         pluginManager.register(DefaultLoaderPlugin.class);
         pluginManager.register(DrawerPlugin.class);
         pluginManager.register(HeaderBarPlugin.class);
         pluginManager.register(ImageViewPlugin.class);
+        pluginManager.register(ListSelectPlugin.class);
         pluginManager.register(ModalViewPlugin.class);
         pluginManager.register(NavigationPlugin.class);
         pluginManager.register(SecureStorePlugin.class);
