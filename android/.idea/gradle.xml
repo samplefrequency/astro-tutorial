@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/velo" />
             <option value="$PROJECT_DIR$/../node_modules/astro-sdk/android" />
+            <option value="$PROJECT_DIR$/../node_modules/astro-sdk/node_modules/mobify-push-android-client/pushclient" />
           </set>
         </option>
         <option name="myModules">
@@ -18,6 +19,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/velo" />
             <option value="$PROJECT_DIR$/../node_modules/astro-sdk/android" />
+            <option value="$PROJECT_DIR$/../node_modules/astro-sdk/node_modules/mobify-push-android-client/pushclient" />
           </set>
         </option>
       </GradleProjectSettings>
