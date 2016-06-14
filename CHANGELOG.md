@@ -1,4 +1,5 @@
 ## To be released
+- Include pushclient module in android build
 
 ## v0.12.0
 - Updates for release v0.12.0 of Astro
